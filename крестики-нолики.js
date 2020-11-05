@@ -1,6 +1,5 @@
 var testing = document.getElementById('testing');
 var move = 0;
-
 testing.addEventListener('click', function(event){
     var currentItem = document.getElementById(event.target.id);
     if(currentItem.innerHTML === 'X' || currentItem.innerHTML === '0'){
@@ -12,7 +11,6 @@ testing.addEventListener('click', function(event){
      check();
     }
 });
-
 function check (){
   var getBlockGame = document.getElementsByClassName('one');
   var arr = [
@@ -25,22 +23,19 @@ function check (){
     [0,4,8],
     [2,4,6]
   ]
-  
   for(var i = 0; i < arr.length; i++){
       if(
           getBlockGame[arr[i][0]].innerHTML === 'X' &&
           getBlockGame[arr[i][1]].innerHTML === 'X' &&
-          getBlockGame[arr[i][2]].innerHTML === 'X' 
-        ) {
+          getBlockGame[arr[i][2]].innerHTML === 'X' ){
             alert('X - WIN');
             location.reload();
-    } else if (
+      }else if (
           getBlockGame[arr[i][0]].innerHTML === '0' &&
           getBlockGame[arr[i][1]].innerHTML === '0' &&
-          getBlockGame[arr[i][2]].innerHTML === '0' 
-              ) {
+          getBlockGame[arr[i][2]].innerHTML === '0' ){
             alert('0 - WIN');
             location.reload();
-         }
-      }
-   }
+          }
+  }
+}
